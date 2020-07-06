@@ -1,4 +1,4 @@
-# rapper_name_generator
+# Rap Name Generator
 
 ### Resources
 
