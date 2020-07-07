@@ -10,7 +10,7 @@ def home():
     noun =  ['Wizard','Fork','Mustard','Gambino','Strap','Chopper','Baby','Thumb','Poppa','Dripper','Purple','Clout','Icey','Nascar','Shooter','Xan','Emo','Dookey','God','Ram','Chapo','Bando','Jugg','Boii','Perc','Flossy','Dead','Door','Zilla','Lost','Savage','Coffin','Neck','Throat','Cautious','Beans','Rackz','$hawty','Ku$h']
 
     code = request.data.decode('utf-8')
-    code_list = code.split(' ')
+    code_list = code.split()
     unicode_letter = code_list[0]
     unicode_num_first = int(code_list[1])
 

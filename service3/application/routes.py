@@ -10,7 +10,6 @@ def home():
         unicode_sum_last += ord(letter)
         
     unicode_num_last = int(unicode_sum_last/len(last_name))
-    unicode_letter = chr(unicode_num_last)
-    letter = str(unicode_letter)    
+    letter = chr(unicode_num_last)
 
     return Response(letter, mimetype='text/plain')
