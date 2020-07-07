@@ -56,7 +56,7 @@ This service will process the output from services two and three and will produc
 
 ## My Application
 
-![App Flow](https://user-images.githubusercontent.com/56595709/86147421-496d3580-baf1-11ea-90a3-53ba11058101.jpg)
+![App Flow](https://user-images.githubusercontent.com/56595709/86761086-a0b55d80-c03d-11ea-831c-5a14d17fa2f3.jpg)
 
 * My application will be a rap name generator based on the popular online wu-tang name generator
 * Service one will act as you'd expect displaying a page for user input and their result from the generator
