@@ -3,58 +3,70 @@ from application import app
 
 
 @app.route('/', methods = ['GET', 'POST'])
-def home():
 
+def generate_rap_name(letter, number):
 
+    number = int(float(number))
+    
     adj = ['Young','Yung','Lil','Big','Sick','Ill','Wavy','DJ','D']
     noun =  ['Wizard','Fork','Mustard','Gambino','Strap','Chopper','Baby','Thumb','Poppa','Dripper','Purple','Clout','Icey','Nascar','Shooter','Xan','Emo','Dookey','God','Ram','Chapo','Bando','Jugg','Boii','Perc','Flossy','Dead','Door','Zilla','Lost','Savage','Coffin','Neck','Throat','Cautious','Beans','Rackz','$hawty','Ku$h']
 
-    code = request.data.decode('utf-8')
-    code_list = code.split()
-    unicode_letter = code_list[1]
-    unicode_num_first = int(float(code_list[0]))
-    name = 'no result'
-
-    if unicode_letter == 'a' or unicode_letter == 'b' or unicode_letter == 'c':
+    if letter == 'a' or letter == 'b' or letter == 'c':
         name = adj[0]
-    elif unicode_letter == 'd' or unicode_letter == 'e' or unicode_letter == 'f':
+    elif letter == 'd' or letter == 'e' or letter == 'f':
         name = adj[1]
-    elif unicode_letter == 'g' or unicode_letter == 'h' or unicode_letter == 'i':
+    elif letter == 'g' or letter == 'h' or letter == 'i':
         name = adj[2]
-    elif unicode_letter == 'j' or unicode_letter == 'k' or unicode_letter == 'l':
+    elif letter == 'j' or letter == 'k' or letter == 'l':
         name = adj[3]
-    elif unicode_letter == 'm' or unicode_letter == 'n' or unicode_letter == 'o':
+    elif letter == 'm' or letter == 'n' or letter == 'o':
         name = adj[4]
-    elif unicode_letter == 'p' or unicode_letter == 'q' or unicode_letter == 'r':
+    elif letter == 'p' or letter == 'q' or letter == 'r':
         name = adj[5]
-    elif unicode_letter == 's' or unicode_letter == 't' or unicode_letter == 'u':
+    elif letter == 's' or letter == 't' or letter == 'u':
         name = adj[6]
-    elif unicode_letter == 'v' or unicode_letter == 'w' or unicode_letter == 'y':
+    elif letter == 'v' or letter == 'w' or letter == 'y':
         name = adj[7]
     else:
         name =adj[8]
 
-    if unicode_num_first > 31 and unicode_num_first < 65:
+    if number > 31 and number < 65:
         name += " " + noun[0]
-    elif unicode_num_first > 65 and unicode_num_first < 75:
+    elif number > 65 and number < 75:
         name += " " + noun[1]
-    elif unicode_num_first > 75 and unicode_num_first < 85:
+    elif number > 75 and number < 85:
         name += " " + noun[2]
-    elif unicode_num_first > 75 and unicode_num_first < 85:
+    elif number > 75 and number < 85:
         name += " " + noun[3]
-    elif unicode_num_first > 85 and unicode_num_first < 95:
+    elif number > 85 and number < 95:
         name += " " + noun[4]
-    elif unicode_num_first > 95 and unicode_num_first < 105:
+    elif number > 95 and number < 105:
         name += " " + noun[5]
-    elif unicode_num_first > 105 and unicode_num_first < 115:
+    elif number > 105 and number < 115:
         name += " " + noun[6]
-    elif unicode_num_first > 115 and unicode_num_first < 125:
+    elif number > 115 and number < 125:
         name += " " + noun[7]
-    elif unicode_num_first > 125 and unicode_num_first < 135 :
+    elif number > 125 and number < 135 :
         name += " " + noun[8]
     else:
         name += " " + noun[9]
+    return name
+
+def home():
+
+
+
+    code = request.data.decode('utf-8')
+    
+    code_list = code.split()
+    
+    letter = code_list[1]
+    number = code_list[0]
+    letter = "i"
+    number = "36"
+
+    name = generate_rap_name(letter, number)
+    
+
 
     return Response(name, mimetype='text/plain')
-
-

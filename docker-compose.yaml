@@ -15,6 +15,7 @@ services:
                         - service2
                         - service3
                         - service4
+                        - mysql
 
         service2:
                 image: callumgoodley/service2
@@ -58,8 +59,19 @@ services:
                           MYSQL_PASSWORD: ${DB_PASSWORD}
                           MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
                           MYSQL_DATABASE: rapper-name-db
-                          MYSQL_DATABASE: test
                ports:
                        - target: 3306
                          published: 3306
                          protocol: tcp
+        mysql_test:
+                    image: callumgoodley/test_db
+                    build: ./testdb
+                    environment:
+                               MYSQL_USER: ${DB_USERNAME}
+                               MYSQL_PASSWORD: ${DB_PASSWORD}
+                               MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+                               MYSQL_DATABASE: test
+                    ports:
+                            - target: 3307
+                              published: 3307
+                              protocol: tcp
