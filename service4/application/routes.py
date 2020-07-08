@@ -11,8 +11,9 @@ def home():
 
     code = request.data.decode('utf-8')
     code_list = code.split()
-    unicode_letter = code_list[0]
-    unicode_num_first = int(code_list[1])
+    unicode_letter = code_list[1]
+    unicode_num_first = int(float(code_list[0]))
+    name = 'no result'
 
     if unicode_letter == 'a' or unicode_letter == 'b' or unicode_letter == 'c':
         name = adj[0]
@@ -54,6 +55,6 @@ def home():
     else:
         name += " " + noun[9]
 
-    return Repsonse(name, mimetype='plain/text')
+    return Response(name, mimetype='text/plain')
 
 
