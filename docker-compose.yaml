@@ -3,7 +3,9 @@ services:
         service1:
                 image: callumgoodley/service1
                 build: ./service1
-                environment: 
+                environment:
+                          DB_USERNAME: ${DB_USERNAME}
+                          DB_PASSWORD: ${DB_PASSWORD} 
                           MY_SECRET_KEY: ${MY_SECRET_KEY}
                 ports:
                         - target: 5000
@@ -48,3 +50,16 @@ services:
                         - type: bind
                           source: ./nginx/nginx.conf
                           target: /etc/nginx/nginx.conf
+        mysql:
+               image: callumgoodley/rapper_name_mysql
+               build: ./db 
+               environment:
+                          MYSQL_USER: ${DB_USERNAME}
+                          MYSQL_PASSWORD: ${DB_PASSWORD}
+                          MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+                          MYSQL_DATABASE: rapper-name-db
+                          MYSQL_DATABASE: test
+               ports:
+                       - target: 3306
+                         published: 3306
+                         protocol: tcp
