@@ -12,6 +12,8 @@ pipeline {
                 sh "sudo docker exec -it mysql-test bash"
                 sh "mysql --user=$DB_USERNAME --password=$DB_PASSWORD test << EOF CREATE DATABASE test; EOF"
                 sh "python3 -m pytest"
+                sh "sudo docker stop mysql-test"
+                sh "sudo docker rm mysql-test"
             }
         }
         stage('Deploy') { 
