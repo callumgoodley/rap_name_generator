@@ -7,7 +7,7 @@ from os import getenv
 class TestBase(TestCase):
     def create_app(self):
         config_name = 'testing'
-        app.config.update(WTF_CSRF_ENABLED=False, DEBUG=True, SECRET_KEY=getenv('MY_SECRET_KEY'), SQLALCHEMY_DATABASE_URI='mysql+pymysql://' + str(getenv('DB_USERNAME'))+ ':' + str(getenv('DB_PASSWORD')) + '@localhost:3306/test' )
+        app.config.update(WTF_CSRF_ENABLED=False, DEBUG=True, SECRET_KEY=getenv('MY_SECRET_KEY'), SQLALCHEMY_DATABASE_URI='mysql+pymysql://' + str(getenv('DB_USERNAME'))+ ':' + str(getenv('DB_PASSWORD')) + '@mysql-test:3306/test' )
         return app
 
 class TestResponse(TestBase):
