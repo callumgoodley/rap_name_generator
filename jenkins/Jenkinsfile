@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Deploy') { 
             steps {
-                sh "docker-compose up -d"
+                sh "bash /home/jenkins/.jenkins/workspace/rap-name-generator/jenkins/deploy.sh"
             }
         }
     }
