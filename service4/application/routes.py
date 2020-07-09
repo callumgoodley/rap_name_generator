@@ -58,8 +58,6 @@ def home():
     
     letter = code_list[1]
     number = code_list[0]
-    letter = "i"
-    number = "36"
 
     name = generate_rap_name(letter, number)
     
