@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh "sudo docker-compose build --parallel"
+                sh "bash /home/jenkins/.jenkins/workspace/rap-name-generator/jenkins/build.sh"
             }
         }
         stage('Test') { 
