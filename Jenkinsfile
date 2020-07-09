@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Set env variables') {
             steps {
-                sh "MY_SECRET_KEY=${MY_SERCRET_KEY}"
+                sh "MY_SECRET_KEY=${MY_SECRET_KEY}"
                 sh "DB_USERNAME=${DB_USERNAME}"
                 sh "DB_PASSWORD=${DB_PASSWORD}"
             }
