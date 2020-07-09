@@ -8,6 +8,6 @@ export DB_PASSWORD=$DB_PASSWORD
 
 cd /home/jenkins/.jenkins/workspace/rap-name-generator/
 
-sudo docker-compose build --parallel
+sudo docker-compose build service1
 
-sudo docker-compose push
+sudo docker-compose push callumgoodley/service1 + ":$BUILD_NUMBER"
