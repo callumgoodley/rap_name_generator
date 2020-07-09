@@ -8,7 +8,7 @@ export DB_PASSWORD=$DB_PASSWORD
 
 cd /home/jenkins/.jenkins/workspace/rap-name-generator/
 
-sudo docker build -parallel
+sudo docker-compose build -parallel
 
 #sudo docker login -u $DH_USERNAME -p $DH_PASSWORD docker.io
 #sudo docker-compose build callumgoodley/service1 + ":$BUILD_NUMBER"
