@@ -1,0 +1,25 @@
+pipeline {
+    agent any 
+    environment {
+        MY_SECRET_KEY='aeiou'
+        DB_USERNAME='callumgoodley'
+        DB_PASSWORD='root'
+    }
+    stages {
+        stage('Build') { 
+            steps {
+                sh "bash /home/jenkins/.jenkins/workspace/rap-name-generator/jenkins/build.sh"
+            }
+        }
+        stage('Test') { 
+            steps {
+                sh "bash /home/jenkins/.jenkins/workspace/rap-name-generator/jenkins/testing.sh"
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                sh "bash /home/jenkins/.jenkins/workspace/rap-name-generator/jenkins/deploy.sh"
+            }
+        }
+    }
+}
