@@ -14,7 +14,7 @@ pipeline {
         stage('Test') { 
             steps {
                 sh "sudo docker run -d -p 3306:3306 --name mysql-test mysql"
-                sh "sudo docker exec -it mysql-test bash"
+                sh "sudo docker exec -T mysql-test bash"
                 sh "mysql --user=$DB_USERNAME --password=$DB_PASSWORD test << EOF CREATE DATABASE test; EOF"
                 sh "python3 -m pytest"
                 sh "sudo docker stop mysql-test"
