@@ -63,15 +63,3 @@ services:
                        - target: 3306
                          published: 3306
                          protocol: tcp
-        mysql_test:
-                    image: callumgoodley/test_db
-                    build: ./testdb
-                    environment:
-                               MYSQL_USER: ${DB_USERNAME}
-                               MYSQL_PASSWORD: ${DB_PASSWORD}
-                               MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-                               MYSQL_DATABASE: test
-                    ports:
-                            - target: 3307
-                              published: 3307
-                              protocol: tcp

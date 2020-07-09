@@ -1,16 +1,10 @@
 from flask import Response, request
 from application import app
 
-
-@app.route('/', methods = ['GET', 'POST'])
-
 def generate_rap_name(letter, number):
-
     number = int(float(number))
-    
     adj = ['Young','Yung','Lil','Big','Sick','Ill','Wavy','DJ','D']
     noun =  ['Wizard','Fork','Mustard','Gambino','Strap','Chopper','Baby','Thumb','Poppa','Dripper','Purple','Clout','Icey','Nascar','Shooter','Xan','Emo','Dookey','God','Ram','Chapo','Bando','Jugg','Boii','Perc','Flossy','Dead','Door','Zilla','Lost','Savage','Coffin','Neck','Throat','Cautious','Beans','Rackz','$hawty','Ku$h']
-
     if letter == 'a' or letter == 'b' or letter == 'c':
         name = adj[0]
     elif letter == 'd' or letter == 'e' or letter == 'f':
@@ -50,8 +44,10 @@ def generate_rap_name(letter, number):
         name += " " + noun[8]
     else:
         name += " " + noun[9]
+    
     return name
 
+@app.route('/', methods = ['GET', 'POST'])
 def home():
 
 
