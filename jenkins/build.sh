@@ -14,5 +14,4 @@ sudo docker-compose build callumgoodley/service3 + ":$BUILD_NUMBER"
 sudo docker-compose build callumgoodley/service4 + ":$BUILD_NUMBER"
 sudo docker-compose build callumgoodley/rapper_name_mysql + ":$BUILD_NUMBER"
 
-sudo docker-compose push 
 
