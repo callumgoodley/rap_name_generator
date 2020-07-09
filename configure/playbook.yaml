@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: true
+  roles:
+  - common
+- hosts: managers
+  become: true
+  roles:
+  - role: manager
+- hosts: workers
+  become: true
+  roles:
+  - role: worker
+- hosts: all
+  become: true
+  roles:
+  - role:  deploy-stack

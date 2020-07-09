@@ -1,0 +1,15 @@
+[managers]
+manager ansible_host=$MANAGER_NODE_IP
+
+[managers:vars]
+ansible_user=callumgoodley
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+
+[workers]
+worker1 = ansible_host=$WORKER_NODE_1_IP
+worker2 = ansible_host=3WORKER_NODE_2_IP
+
+[workers:vars]
+ansible_user=callumgoodley
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+~                                                        

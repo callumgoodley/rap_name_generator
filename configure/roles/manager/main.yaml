@@ -1,0 +1,11 @@
+- name: "Initialise swarm"
+  docker_swarm:
+    state: present
+- name: "Get swarm information"
+  docker_swarm_info:
+  register: swarm_info
+- name: "Get worker join token"
+  add_host:
+    name: "token"
+    value: "{{ swarm_info['swarm_facts']['JoinTokens']['Worker'] }}"
+
