@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Test') { 
             steps {
-                sh "testing.sh"
+                sh "/home/jenkins/.jenkins/workspace/rap-name-generator/jenkins/testing.sh"
             }
         }
         stage('Deploy') { 
