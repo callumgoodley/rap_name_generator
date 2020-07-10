@@ -1,0 +1,19 @@
+- name: "remove old repo"
+  file:
+    path: /home/callumgoodley/rap_name_generator
+    state: absent
+- name: "pull latest repo"
+  git:
+    repo: 'https://github.com/callumgoodley/rap_name_generator.git'
+    dest: /home/callumgoodley/rap_name_generator
+- name: "Initialise swarm"
+  docker_swarm:
+    state: present
+- name: "Get swarm information"
+  docker_swarm_info:
+  register: swarm_info
+- name: "Get worker join token"
+  add_host:
+    name: "token"
+    value: "{{ swarm_info['swarm_facts']['JoinTokens']['Worker'] }}"
+
