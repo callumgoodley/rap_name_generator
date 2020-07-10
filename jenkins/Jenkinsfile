@@ -8,17 +8,17 @@ pipeline {
     stages {
         stage('Build - docker') { 
             steps {
-                sh "bash /home/jenkins/.jenkins/workspace/rap-name-generator/jenkins/build.sh"
+                sh "bash ./jenkins/build.sh"
             }
         }
         stage('Test - pytest') { 
             steps {
-                sh "bash /home/jenkins/.jenkins/workspace/rap-name-generator/jenkins/testing.sh"
+                sh "bash ./jenkins/testing.sh"
             }
         }
         stage('Configure and Deploy - Ansible') { 
             steps {
-                sh "bash /home/jenkins/.jenkins/workspace/rap-name-generator/jenkins/config-deploy.sh"
+                sh "bash ./jenkins/config-deploy.sh"
             }
         }
     }
