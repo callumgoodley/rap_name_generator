@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Deploy') { 
             steps {
-                sh "bash /home/jenkins/.jenkins/workspace/rap-name-generator/jenkins/deploy.sh"
+                sh "bash /home/jenkins/.jenkins/workspace/rap-name-generator/jenkins/config-deploy.sh"
             }
         }
     }
