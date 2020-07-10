@@ -6,17 +6,17 @@ pipeline {
         DB_PASSWORD='root'
     }
     stages {
-        stage('Build') { 
+        stage('Build - docker') { 
             steps {
                 sh "bash /home/jenkins/.jenkins/workspace/rap-name-generator/jenkins/build.sh"
             }
         }
-        stage('Test') { 
+        stage('Test - pytest') { 
             steps {
                 sh "bash /home/jenkins/.jenkins/workspace/rap-name-generator/jenkins/testing.sh"
             }
         }
-        stage('Deploy') { 
+        stage('Configure and Deploy - Ansible') { 
             steps {
                 sh "bash /home/jenkins/.jenkins/workspace/rap-name-generator/jenkins/config-deploy.sh"
             }
