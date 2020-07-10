@@ -1,6 +1,0 @@
-- name: Deploy stack from a compose file
-  docker_stack:
-    state: present
-    name: rapstack
-    compose:
-      - /home/callumgoodley/rap_name_generator/docker-compose.yaml

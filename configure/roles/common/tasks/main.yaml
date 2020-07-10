@@ -6,8 +6,16 @@
     - curl
     - gnupg-agent
     - software-properties-common
+    - python-pip
+    - python3-pip
+    - git
     update_cache: yes
     state: latest
+- name: "Install python docker module"
+  pip:
+    name:
+    - docker
+    - jsondiff
 - name: "add docker key"
   apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
