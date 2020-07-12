@@ -10,7 +10,6 @@ class TestBase(TestCase):
 
 class TestService(TestBase):
     def test_generate_rap_name(name):
-        assert routes.generate_rap_name("s", "36") == 'Wavy Wizard'
         assert routes.generate_rap_name("a", "66") == 'Young Fork'
         assert routes.generate_rap_name("d", "76") == 'Yung Mustard'
         assert routes.generate_rap_name("g", "86") == 'Lil Gambino'
@@ -19,3 +18,4 @@ class TestService(TestBase):
         assert routes.generate_rap_name("p", "116") == 'Ill Thumb'
         assert routes.generate_rap_name("v", "126") == 'DJ Poppa'
         assert routes.generate_rap_name("z", "1000") == 'D Dripper'
+        assert routes.generate_rap_name("s", "36") == 'Wavy Wizard'
