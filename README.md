@@ -56,9 +56,19 @@ This service will process the output from services two and three and will produc
 
 ## My Application
 
-![App Flow](https://user-images.githubusercontent.com/56595709/86761086-a0b55d80-c03d-11ea-831c-5a14d17fa2f3.jpg)
-
 * My application will be a rap name generator based on the popular online wu-tang name generator
 * Service one will act as you'd expect displaying a page for user input and their result from the generator
-* Service two will take the first name input and return a letter and service three will take the second name input and then return a number.
-* Service four will take the resulting letter and number and return a rap name determined by the letter and number it receives.
+* Service two will take the first name input and return a letter and service three will take the second name input and then return a number
+* Service four will take the resulting letter and number and return a rap name determined by the letter and number it receives
+
+At first I created a design for the app that would pass user input from service 1 to services 2 and 3 seperately then thos would pass their output to service 4 which would then return an output to service 1. You can see the model of the application flow below.
+
+![App flow wrong](https://user-images.githubusercontent.com/56595709/86147421-496d3580-baf1-11ea-90a3-53ba11058101.jpg)
+
+Although the original design may have worked I believe it would be much more difficult to implement than the final design, instead of having all the apps making post requests to and from each other it make more sense to have service 1 making all the requests as a central hub for the application and the other services just returning the result of their function. The final design for the applications services flow can be seen in the diagram below. 
+
+![App Flow](https://user-images.githubusercontent.com/56595709/86761086-a0b55d80-c03d-11ea-831c-5a14d17fa2f3.jpg)
+
+## CI Pipeline
+
+Once the application design was in place it was time to start thinking about what the CI Pipeline would look like. It was important 
