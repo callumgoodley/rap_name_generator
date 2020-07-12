@@ -1,13 +1,13 @@
 #! /bin/bash
 
-cd ./service1/testing
+cd ~/.jenkins/workspace/rap_name_generator_final/service1/testing
 python -m pytest --cov application
 
-cd ./service2/testing
+cd ~/.jenkins/workspace/rap_name_generator_final/service2/testing
 python -m pytest --cov application
 
-cd ./service3/testing
+cd ~/.jenkins/workspace/rap_name_generator_final/service3/testing
 python -m pytest --cov application
 
-cd ./service4/testing
+cd ~/.jenkins/workspace/rap_name_generator_final/service4/testing
 python -m pytest --cov application
