@@ -1,9 +1,10 @@
 #! /bin/bash
-cd ./service1/testing
+
+cd /home/callumgoodley/rap_name_generator/service1/testing
 python -m pytest --cov application
-cd ./service2/testing
+cd /home/callumgoodley/rap_name_generator/service2/testing
 python -m pytest --cov application
-cd./service3/testing
+cd /home/callumgoodley/rap_name_generator/service3/testing
 python -m pytest --cov application
-cd ./service4/testing
+cd /home/callumgoodley/rap_name_generator/service4/testing
 python -m pytest --cov application
