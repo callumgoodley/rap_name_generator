@@ -13,7 +13,7 @@ class TestService(TestBase):
         assert routes.generate_rap_name("s", "36") == 'Wavy Wizard'
         assert routes.generate_rap_name("a", "66") == 'Young Fork'
         assert routes.generate_rap_name("d", "76") == 'Yung Mustard'
-        assert routes.generate_rap_name("g", "86") == 'Lil Gambino'
+        assert routes.generate_rap_name("g", "86") == 'Lil Strap'
         assert routes.generate_rap_name("j", "96") == 'Big Chopper'
         assert routes.generate_rap_name("m", "106") == 'Sick Baby'
         assert routes.generate_rap_name("p", "116") == 'Ill Thumb'
