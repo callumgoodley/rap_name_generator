@@ -79,6 +79,14 @@ To expand on what you can see in the diagram have source code of the application
 
 Once the tests are complete the Jenkinsfile moves on to the configuration and deployment stage the deployment and configuration script runs an ansible playbook which will install docker and docker compose on the all host machines. Once docker and docker-compose are installed then the playbook will initialise a swarm on the manager machine and join that swarm as a worker on another machine. Once the swarm has been created the playbook will then deploy the stack on the swarm it has created and the app is then available from each machine.
 
+## Ansible 
+
 Below is an image outlining the ansible plays for configuration and deployment and the machines on which they occur.
 
 ![Ansible plays diagram](https://user-images.githubusercontent.com/56595709/87246336-b616f700-c444-11ea-9476-58a69b98d9d4.jpg)
+
+## Swarm 
+
+
+
+
