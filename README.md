@@ -133,6 +133,8 @@ As you can see testing coverage for services 1, 2 and 3 came through pretty high
 The application itself is very simple from the users perspective.
 ![front end](https://user-images.githubusercontent.com/56595709/87257837-62cd9480-c496-11ea-8877-ab8f7c9891b6.png)
 
+## Risk Assessment
+
 ## Difficulties
 
 ## Current Issues
