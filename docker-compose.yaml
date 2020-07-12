@@ -53,4 +53,4 @@ services:
                          published: 3306
                          protocol: tcp
 volumes:
-        my-data-volume
+        my-data-volume:
