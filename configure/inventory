@@ -19,6 +19,7 @@ ansible_python_interpreter=/usr/bin/python3
 
 [workers]
 worker1 ansible_host=rap-worker1
+worker2 ansible_host=rap-worker2
 
 [workers:vars]
 ansible_user=callumgoodley
