@@ -38,19 +38,6 @@ services:
                         - target: 5003
                           published: 5003
                           protocol: tcp
-        # nginx:
-               #  image: nginx:latest
-               #  ports:
-                       #  - target: 80
-                       #    published: 80
-                       #    protocol: tcp
-
-               #  depends_on: 
-                  #       - service1
-               #  volumes: 
-                 #        - type: bind
-                   #        source: ./nginx/nginx.conf
-                     #      target: /etc/nginx/nginx.conf
         mysql:
                image: callumgoodley/rapper_name_mysql
                build: ./db 
