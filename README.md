@@ -85,7 +85,24 @@ Below is an image outlining the ansible plays for configuration and deployment a
 
 ![Ansible plays diagram](https://user-images.githubusercontent.com/56595709/87246336-b616f700-c444-11ea-9476-58a69b98d9d4.jpg)
 
-## Swarm 
+## Swarm and stack 
+
+
+* As can be seen in the diagram the docker swarm consists of the a manager and worker nodes.
+* The swarm is initialised via the manager node and the workers join the swarm.
+* The stack that is deployed in the ansible playbook is distributed throughout the swarm by the manager. 
+* Replicas of the stack services are created in the manager node and distributed throughout the swarm by the manager.
+
+The stack for this application consists of:
+
+* NGINX
+* MYSQL DB
+* SERVICE APPLICATIONS 1,2,3 & 4
+
+Each of the app services are replicated 5 times in order to improve the reliabilty of the application as a whole even when the app is undergoing changes.
+
+## Jenkins
+
 
 
 
