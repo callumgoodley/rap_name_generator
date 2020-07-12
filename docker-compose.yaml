@@ -47,7 +47,7 @@ services:
                           MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
                           MYSQL_DATABASE: rapper-name-db
                volumes:
-                       - my-datavolume:/var/lib/mysql
+                       - my-data-volume:/var/lib/mysql
                ports:
                        - target: 3306
                          published: 3306
