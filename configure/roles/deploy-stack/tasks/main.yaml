@@ -9,9 +9,3 @@
           DB_USERNAME: callumgoodley
           DB_PASSWORD: root
 
-ssh callumgoodley@rap-manager << EOF
-sudo docker service update -–replicas 3 rapstack_service1
-sudo docker service update -–replicas 3 rapstack_service2
-sudo docker service update -–replicas 3 rapstack_service3
-sudo docker service update -–replicas 3 rapstack_service4
-sudo docker service update --replicas 3 rapstack_mysql
