@@ -79,6 +79,10 @@ To expand on what you can see in the diagram have source code of the application
 
 Once the tests are complete the Jenkinsfile moves on to the configuration and deployment stage the deployment and configuration script runs an ansible playbook which will install docker and docker compose on the all host machines. Once docker and docker-compose are installed then the playbook will initialise a swarm on the manager machine and join that swarm as a worker on another machine. Once the swarm has been created the playbook will then deploy the stack on the swarm it has created and the app is then available from each machine.
 
+## Git and Trello
+
+
+
 ## Ansible 
 
 Below is an image outlining the ansible plays for configuration and deployment and the machines on which they occur.
@@ -103,6 +107,37 @@ Each of the app services are replicated 5 times in order to improve the reliabil
 
 ## Jenkins
 
+![Jenkins pipeline logs](https://user-images.githubusercontent.com/56595709/87257512-6d3a5f00-c493-11ea-9ad2-d2e64de84814.png)
+
+As seen in the diagram of the CI pipeline Jenkins was used as the CI server and is really the heart of the project. I used a Jenkins pipeline to automate all the processes on the project so as soon as a webhook triggered by a push to git hub the jenkinsfile file will be put into action. The jenkinsfile runs the scripts to build, test, configure and deploy the application. Using a Jenkins pipeline is really handy because it lets me modularise everything and quickly see exactly where any problems have occured. 
+
+It also send email notfications to my gmail account if the build fails and when it has been succesful again after a failure which is really helpful feature for keeping track of the project.
+
+![Jenkins email notification](https://user-images.githubusercontent.com/56595709/87257514-79262100-c493-11ea-9f2f-118fa7718734.png)
+
+## Testing
+
+Part of the Jenkins automation is the testing process, as you can see in the image of the jenkins logs I have used Jenkins to automatically run Pytest with coverage reports for each part of service of the application. The intial coverage reports of the first tests looked like this...
+
+![service1 tests](https://user-images.githubusercontent.com/56595709/87257519-7dead500-c493-11ea-8aee-99f7ba8548c8.png)
+![service2 tests](https://user-images.githubusercontent.com/56595709/87257518-7d523e80-c493-11ea-99c4-fbd18084e26c.png)
+![service3 tests](https://user-images.githubusercontent.com/56595709/87257517-7c211180-c493-11ea-95ae-e3956383e743.png)
+![service4 tests](https://user-images.githubusercontent.com/56595709/87257516-7aefe480-c493-11ea-9dbc-e0d6ae9429f0.png)
+
+As you can see testing coverage for services 1, 2 and 3 came through pretty high from the start which is great but the coverage for service 4 wasn't high at all so I made it a priority to make sure the coverage was just as high as the other services to ensure the reliabilty of the application itself. Service 4's test coverage is now looking much better...
+
+![service4 improved](https://user-images.githubusercontent.com/56595709/87257520-7fb49880-c493-11ea-8ad7-4fa014beb5c0.png)
+
+## Front end design 
+
+The application itself is very simple from the users perspective.
+![front end](https://user-images.githubusercontent.com/56595709/87257837-62cd9480-c496-11ea-8877-ab8f7c9891b6.png)
+
+## Difficulties
+
+## Current Issues
+
+## Future Improvements
 
 
 
