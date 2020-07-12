@@ -1,10 +1,5 @@
 pipeline {
     agent any 
-    environment {
-        MY_SECRET_KEY='aeiou'
-        DB_USERNAME='callumgoodley'
-        DB_PASSWORD='root'
-    }
     stages {
         stage('Build - docker') { 
             steps {
@@ -23,8 +18,8 @@ pipeline {
         }
         stage('Email notification') {
             steps { 
-                mail bcc: '', body: '''$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS: 
-                Check console output at $BUILD_URL to view the results.''', cc: '', from: '', replyTo: '', subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'callumgoodley@googlemail.com'
+                mail bcc: '', body: '''${env.PROJECT_NAME} - Build # ${env.BUILD_NUMBER} - ${env.BUILD_STATUS}: 
+                Check console output at ${env.BUILD_URL} to view the results.''', cc: '', from: '', replyTo: '', subject: '${PROJECT_NAME} - Build # ${BUILD_NUMBER} - ${BUILD_STATUS}!', to: 'callumgoodley@googlemail.com'
             }
         }
     }
