@@ -38,19 +38,6 @@ services:
                         - target: 5003
                           published: 5003
                           protocol: tcp
-        nginx:
-                image: nginx:latest
-                ports:
-                        - target: 80
-                          published: 80
-                          protocol: tcp
-
-                depends_on: 
-                        - service1
-                volumes: 
-                        - type: bind
-                          source: ./nginx/nginx.conf
-                          target: /etc/nginx/nginx.conf
         mysql:
                image: callumgoodley/rapper_name_mysql
                build: ./db 
@@ -59,7 +46,11 @@ services:
                           MYSQL_PASSWORD: ${DB_PASSWORD}
                           MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
                           MYSQL_DATABASE: rapper-name-db
+               volumes:
+                       - my-data-volume:/var/lib/mysql
                ports:
                        - target: 3306
                          published: 3306
                          protocol: tcp
+volumes:
+        my-data-volume:

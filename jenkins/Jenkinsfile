@@ -1,25 +1,28 @@
 pipeline {
     agent any 
-    environment {
-        MY_SECRET_KEY='aeiou'
-        DB_USERNAME='callumgoodley'
-        DB_PASSWORD='root'
-    }
     stages {
-        stage('Build') { 
+        stage('Build - docker') { 
             steps {
-                sh "bash /home/jenkins/.jenkins/workspace/rap-name-generator/jenkins/build.sh"
+                sh "bash ./jenkins/build.sh"
             }
         }
-        stage('Test') { 
+        stage('Test - pytest') { 
             steps {
-                sh "bash /home/jenkins/.jenkins/workspace/rap-name-generator/jenkins/testing.sh"
+                sh "bash ./jenkins/testing.sh"
             }
         }
-        stage('Deploy') { 
+        stage('Configure and Deploy - Ansible') { 
             steps {
-                sh "bash /home/jenkins/.jenkins/workspace/rap-name-generator/jenkins/deploy.sh"
+                sh "bash ./jenkins/config-deploy.sh"
             }
+        }
+    }
+    post {
+        always {
+          step([$class: 'Mailer',
+            notifyEveryUnstableBuild: true,
+            recipients: "callumgoodley@googlemail.com",
+            sendToIndividuals: true])
         }
     }
 }
