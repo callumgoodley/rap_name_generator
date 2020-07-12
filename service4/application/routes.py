@@ -30,8 +30,6 @@ def generate_rap_name(letter, number):
         name += " " + noun[1]
     elif number > 75 and number < 85:
         name += " " + noun[2]
-    elif number > 75 and number < 85:
-        name += " " + noun[3]
     elif number > 85 and number < 95:
         name += " " + noun[4]
     elif number > 95 and number < 105:
