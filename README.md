@@ -79,9 +79,15 @@ To expand on what you can see in the diagram have source code of the application
 
 Once the tests are complete the Jenkinsfile moves on to the configuration and deployment stage the deployment and configuration script runs an ansible playbook which will install docker and docker compose on the all host machines. Once docker and docker-compose are installed then the playbook will initialise a swarm on the manager machine and join that swarm as a worker on another machine. Once the swarm has been created the playbook will then deploy the stack on the swarm it has created and the app is then available from each machine.
 
-## Git and Trello
+## Trello
 
+In order to keep track of and organise this project I used Trello. Using Trello allowed me to create user stories using the Moscow method and then plan my days with tasks that would allow me to acheieve these user stories. The layout of which can be seen below:
 
+![Trello](https://user-images.githubusercontent.com/56595709/87257521-80e5c580-c493-11ea-9398-39d93cc75535.png)
+
+## Git 
+
+As you can see here I've used Git as a version control system, Git and Github have allowed me to work on different branches of the project at different times making sure that I am keeping the master code in tact and functioning at all times. I've also implemented Github's webhooks feature which is a key element of the automation process.
 
 ## Ansible 
 
@@ -137,10 +143,23 @@ The application itself is very simple from the users perspective.
 
 ## Difficulties
 
+The main difficulties I experienced with this project were:
+
+* Routing for scripts
+* Databases as containers
+
 ## Current Issues
+
+* Data not persisting with the volume created
+* NGINX running from every stack 
 
 ## Future Improvements
 
+* Get NGINX running as a load balancer
+* Get mySQL container persisting data properly
 
+## Author
+
+Callum Goodley
 
 
