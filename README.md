@@ -94,6 +94,8 @@ In order to keep track of and organise this project I used Trello. Using Trello 
 
 As you can see here I've used Git as a version control system, Git and Github have allowed me to work on different branches of the project at different times making sure that I am keeping the master code in tact and functioning at all times. I've also implemented Github's webhooks feature which is a key element of the automation process.
 
+![git branches](https://user-images.githubusercontent.com/56595709/87298215-baedb080-c501-11ea-9e5c-08adf8e09dcf.png)
+
 ## Data
 
 The database was very simple for this project and consisted of just one table a users table in which the data was stored as follows:
