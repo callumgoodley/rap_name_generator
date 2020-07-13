@@ -9,10 +9,15 @@
 
 * Brief
   * Minimum Requirements
-* Functionality
+* Architecture
+* My Application
+* CI Pipeline
+* Trello
+* Git
 * Data
-* Tech Stack
-* CI Pipeline 
+* Ansible
+* Docker Swarm and Stack
+* Jenkins
 * Testing 
 * Front-End Design
 * Risk Assessment
@@ -101,7 +106,7 @@ Below is an image outlining the ansible plays for configuration and deployment a
 
 ![Ansible plays diagram](https://user-images.githubusercontent.com/56595709/87246336-b616f700-c444-11ea-9476-58a69b98d9d4.jpg)
 
-## Swarm and stack 
+## Docker swarm and stack 
 
 
 * As can be seen in the diagram the docker swarm consists of the a manager and worker nodes.
