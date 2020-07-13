@@ -89,6 +89,12 @@ In order to keep track of and organise this project I used Trello. Using Trello 
 
 As you can see here I've used Git as a version control system, Git and Github have allowed me to work on different branches of the project at different times making sure that I am keeping the master code in tact and functioning at all times. I've also implemented Github's webhooks feature which is a key element of the automation process.
 
+## Data
+
+The database was very simple for this project and consisted of just one table a users table in which the data was stored as follows:
+
+![data diagram](https://user-images.githubusercontent.com/56595709/87291626-8117ac80-c4f7-11ea-81d5-fdc1b262f16a.jpg)
+
 ## Ansible 
 
 Below is an image outlining the ansible plays for configuration and deployment and the machines on which they occur.
