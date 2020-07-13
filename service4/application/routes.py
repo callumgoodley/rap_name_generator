@@ -5,21 +5,21 @@ def generate_rap_name(letter, number):
     number = int(float(number))
     adj = ['Young','Yung','Lil','Big','Sick','Ill','Wavy','DJ','D']
     noun =  ['Wizard','Fork','Mustard','Gambino','Strap','Chopper','Baby','Thumb','Poppa','Dripper','Purple','Clout','Icey','Nascar','Shooter','Xan','Emo','Dookey','God','Ram','Chapo','Bando','Jugg','Boii','Perc','Flossy','Dead','Door','Zilla','Lost','Savage','Coffin','Neck','Throat','Cautious','Beans','Rackz','$hawty','Ku$h']
-    if letter == 'a' or letter == 'b' or letter == 'c':
+    if letter == 'a' or letter == 'b' or letter == 'c' or letter == 'A' or letter == 'B' or letter == 'C':
         name = adj[0]
-    elif letter == 'd' or letter == 'e' or letter == 'f':
+    elif letter == 'd' or letter == 'e' or letter == 'f' or letter == 'D' or letter == 'E' or letter == 'F':
         name = adj[1]
-    elif letter == 'g' or letter == 'h' or letter == 'i':
+    elif letter == 'g' or letter == 'h' or letter == 'i' or letter == 'G' or letter == 'H' or letter == 'I':
         name = adj[2]
-    elif letter == 'j' or letter == 'k' or letter == 'l':
+    elif letter == 'j' or letter == 'k' or letter == 'l' or letter == 'J' or letter == 'K' or letter == 'L':
         name = adj[3]
-    elif letter == 'm' or letter == 'n' or letter == 'o':
+    elif letter == 'm' or letter == 'n' or letter == 'o' or letter == 'M' or letter == 'N' or letter == 'O':
         name = adj[4]
-    elif letter == 'p' or letter == 'q' or letter == 'r':
+    elif letter == 'p' or letter == 'q' or letter == 'r' or letter == 'P' or letter == 'Q' or letter == 'R':
         name = adj[5]
-    elif letter == 's' or letter == 't' or letter == 'u':
+    elif letter == 's' or letter == 't' or letter == 'u' or letter == 'S' or letter == 'T' or letter == 'U':
         name = adj[6]
-    elif letter == 'v' or letter == 'w' or letter == 'y':
+    elif letter == 'v' or letter == 'w' or letter == 'x' or letter == 'V' or letter == 'W' or letter == 'X':
         name = adj[7]
     else:
         name =adj[8]
