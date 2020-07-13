@@ -3,7 +3,7 @@
 ### Resources
 
 * Trello - https://trello.com/b/dCUsyGNg/rap-name-generator
-* Website - http://35.242.143.43:5000
+* Website - http://35.242.143.43
 
 ## Contents 
 
@@ -154,13 +154,13 @@ The main difficulties I experienced with this project were:
 
 ## Current Issues
 
-* Data not persisting with the volume created
+* Not using all potential rapper names
 * NGINX running from every stack 
 
 ## Future Improvements
 
 * Get NGINX running as a load balancer
-* Get mySQL container persisting data properly
+* Get testing closer to 100% for all service applications
 
 ## Author
 
