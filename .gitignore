@@ -1,3 +1,5 @@
 venv/
 *.pyc
-pycache/
+__pycache__/
+.gitignore
+.coverage
