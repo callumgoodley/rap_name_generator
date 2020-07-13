@@ -9,7 +9,6 @@ def generate_number(name):
         int_num = int(unicode_num_first)
         number = str(unicode_num_first)
         return number
-
 @app.route('/', methods = ['POST'])
 def home():
 
