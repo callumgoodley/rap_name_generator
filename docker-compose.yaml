@@ -71,11 +71,7 @@ services:
                           MYSQL_PASSWORD: ${DB_PASSWORD}
                           MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
                           MYSQL_DATABASE: rapper-name-db
-               volumes:
-                       - my-data-volume:/var/lib/mysql
                ports:
                        - target: 3306
                          published: 3306
                          protocol: tcp
-volumes:
-        my-data-volume:
