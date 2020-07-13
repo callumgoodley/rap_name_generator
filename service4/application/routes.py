@@ -52,10 +52,10 @@ def home():
 
     code = request.data.decode('utf-8')
     
-    code_list = code.split()
+    split_code = code.split()
     
-    letter = code_list[1]
-    number = code_list[0]
+    letter = split_code[1]
+    number = split_code[0]
 
     name = generate_rap_name(letter, number)
     

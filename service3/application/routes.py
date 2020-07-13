@@ -1,11 +1,11 @@
 from flask import Response, request
 from application import app
 
-def generate_letter(name):
+def generate_letter(last_name):
     unicode_sum_last = 0
-    for letter in name:
+    for letter in last_name:
         unicode_sum_last += ord(letter)
-    unicode_num_last = int(unicode_sum_last/len(name))
+    unicode_num_last = int(unicode_sum_last/len(last_name))
     letter = chr(unicode_num_last)
     return letter
 
