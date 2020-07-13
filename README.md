@@ -141,6 +141,10 @@ The application itself is very simple from the users perspective.
 
 ## Risk Assessment
 
+It is always important to carry out a risk assessment for any project and fortunatley this application is relatively low risk due to the fact that it doesn't store any sensitive information connected to the users name. A full risk assessment matrix can be seen below:
+
+![Risk Assessment](https://user-images.githubusercontent.com/56595709/87278700-02ae1100-c4dd-11ea-845c-4cbcee313d4b.png)
+
 ## Difficulties
 
 The main difficulties I experienced with this project were:
