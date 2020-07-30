@@ -1,0 +1,164 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service1
+  labels: 
+    app: service1
+spec:
+  selector:
+    matchLabels:
+      app: service1
+  template:
+    metadata:
+      labels:
+        app: service1
+    spec:
+      containers:
+      - name: service1
+        image: callumgoodley/service1:latest
+        ports:
+        - containerPort: 5000
+        env: 
+        - name: DB_USERNAME
+          value: "callumgoodley"
+        - name: DB_PASSWORD
+          value: "root"
+        - name: MY_SECRET_KEY
+          value: "secret"
+
+
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service2
+  labels:
+    app: service2
+spec:
+  selector:
+    matchLabels:
+      app: service2
+  template:
+    metadata:
+      labels:
+        app: service2
+    spec:
+      containers:
+      - name: service2
+        image: callumgoodley/service2:latest
+        ports:
+        - containerPort: 5001
+
+---
+          
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service3
+  labels:
+    app: service3
+spec:
+  selector:
+    matchLabels:
+      app: service3
+  template:
+    metadata:
+      labels:
+        app: service3
+    spec:
+      containers:
+      - name: service3
+        image: callumgoodley/service3:latest
+        ports:
+        - containerPort: 5002
+
+---        
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service4
+  labels:
+    app: service4
+spec:
+  selector:
+    matchLabels:
+      app: service4
+  template:
+    metadata:
+      labels:
+        app: service4
+    spec:
+      containers:
+      - name: service4
+        image: callumgoodley/service4:latest
+        ports:
+        - containerPort: 5003
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  labels:
+    app: mysql
+spec:
+  selector:
+    matchLabels:
+      app: mysql 
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - name: msyql
+        image: callumgoodley/rapper_name_mysql:latest
+        ports:
+        - containerPort: 3306
+        env:
+        - name: MYSQL_USER
+          value: "callumgoodley"
+        - name: MYSQL_PASSWORD
+          value: "root"
+        - name: MYSQL_ROOT_PASSWORD
+          value: "root"
+        - name: MYSQL_DATABASE
+          value: "rapper-name-db"
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+        volumeMounts:
+        - name: nginx-config
+          mountPath: /etc/nginx/conf.d
+      volumes:
+      - name: nginx-config
+        configMap:
+          name: nginx-config
